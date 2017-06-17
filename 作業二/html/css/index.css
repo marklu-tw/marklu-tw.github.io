@@ -1,0 +1,30 @@
+.jumbotron {
+    background-color: rgba(3, 169, 244, 0.31);
+    color: #247d3c;
+    box-shadow: 9px 13px 8px 3px black;
+    text-shadow: 3px 0px 18px black;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.item {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.btn {
+    background-color: #8BC34A;
+    color: rgb(255, 235, 59);
+    box-shadow: inset 0px 0px 20px 5px rgb(0, 146, 212);
+    text-shadow: 2px 0px 7px black;
+    border-color: #3F51B5;
+}
+
+.item2 {
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
