@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>簡易財報分析計算機</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1 class="display-3">Dubont Analysis 杜邦分析</h1>
+        <p class="lead">同時了解公司之獲利能力、資產運用效率及舉債能力的指標</p>
+        <hr class="my-4">
+    </div>
+
+
+    <div class="item2">
+        <p>請輸入以下科目之金額</p>
+    </div>
+    <div class="item">
+        <div class="form-group row">
+
+            <label for="example-number-input" class="col-5 col-form-label">營業淨利(net income)</label>
+            <div class="col-7">
+                <input class="form-control" type="number" value=" " id="i">
+            </div>
+        </div>
+
+        <div class="form-group row">
+
+            <label for="example-number-input" class="col-5 col-form-label">銷售淨利(net sales)</label>
+            <div class="col-7">
+                <input class="form-control" type="number" value=" " id="s">
+            </div>
+        </div>
+
+        <div class="form-group row">
+
+            <label for="example-number-input" class="col-5 col-form-label">平均總資產(average total assets)</label>
+            <div class="col-7">
+                <input class="form-control" type="number" value=" " id="a">
+            </div>
+        </div>
+
+        <div class="form-group row">
+
+            <label for="example-number-input" class="col-5 col-form-label">平均總權益(average total equity)</label>
+            <div class="col-7">
+                <input class="form-control" type="number" value=" " id="e">
+            </div>
+        </div>
+
+
+        <button id="cal" type="button" class="btn btn-primary">計算</button>
+
+        <hr>
+
+        <div class="form-group row">
+            <label for="example-number-input" class="col-5 col-form-label">獲利能力(毛利率 profit margin)</label>
+            <div class="col-7">
+                <input class="form-control" type="number" id="pm">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="example-number-input" class="col-5 col-form-label">資產運用效率(資產周轉率 asset turnover)</label>
+            <div class="col-7">
+                <input class="form-control" type="number" id="at">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="example-number-input" class="col-5 col-form-label">舉債能力(資產權益比例 asset-to-equity ratio)</label>
+            <div class="col-7">
+                <input class="form-control" type="number" id="aer">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="example-number-input" class="col-5 col-form-label">ROE(return on shareholders' equity)</label>
+            <div class="col-7">
+                <input class="form-control" type="number" id="roe">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script src="./js/index.js"></script>
+
+</body>
+
+</html>
+
+$("#cal").on("click", function() {
+    var i = $("#i").val()
+    var s = $("#s").val()
+    var a = $("#a").val()
+    var e = $("#e").val()
+
+    i = Number(i)
+    s = Number(s)
+    a = Number(a)
+    e = Number(e)
+
+    pm = i / s
+    at = s / a
+    aer = a / e
+    roe = i / e
+
+    $('#pm').val(pm)
+    $('#at').val(at)
+    $('#aer').val(aer)
+    $('#roe').val(roe)
+})
+
+.jumbotron {
+    background-color: rgba(3, 169, 244, 0.31);
+    color: #247d3c;
+    box-shadow: 9px 13px 8px 3px black;
+    text-shadow: 3px 0px 18px black;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.item {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.btn {
+    background-color: #8BC34A;
+    color: rgb(255, 235, 59);
+    box-shadow: inset 0px 0px 20px 5px rgb(0, 146, 212);
+    text-shadow: 2px 0px 7px black;
+    border-color: #3F51B5;
+}
+
+.item2 {
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
